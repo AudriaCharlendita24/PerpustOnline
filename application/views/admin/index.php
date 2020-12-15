@@ -1,158 +1,226 @@
-<div class="page-header">
-  <h3>Dashboard</h3>
-</div>
-<div class="row">
-  <div class="col-lg-3 col-md-6">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-      <div class="row">
-        <div class="col-xs-3">
-          <i class="glyphicon glyphiconfolder-open"></i>
-        </div>
-        <div class="col-xs-9 text-right">
-          <div class="huge">
-            <font size="18"><b><?php echo $this->M_perpus->get_data('buku')->num_rows(); ?></b></font>
-          </div>
-              <div><b>Jumlah Buku yang terdaftar</b></div>
-            </div>
-          </div>
-        </div>
-        <a href="<?php echo base_url().'admin/buku' ?>">
-          <div class="panel-footer">
-            <span class="pull-left">View Details</span>
-            <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
-            <div class="clearfix"></div>
-          </div>
-        </a>
-      </div>
-    </div>
 
-    <div class="col-lg-3 col-md-6">
-      <div class="panel panel-success">
-        <div class="panel-heading">
+
+    <!-- Sidebar -->
+   
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+   
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 font-weight-bold text-gray-800" style="font-family: 'Roboto Slab', serif;">Dashboard</h1>
+          </div>
+
+          <!-- Content Row -->
           <div class="row">
-            <div class="col-xs-3">
-              <i class="glyphicon glyphiconuser"></i>
-            </div>
-            <div class="col-xs-9 text-right">
-              <div class="huge">
-                <font size="18"><b><?php echo $this->M_perpus->get_data('anggota')->num_rows(); ?></b></font>
-              </div>
-                  <div><b>Jumlah Anggota yang terdaftar</b></div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <a href="<?php echo base_url().'admin/buku' ?>" style="text-decoration: none;">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">DATA BUKU</div>
+                      <div class="h2 mb-0 font-weight-bold text-gray-800"><?php echo $this->M_perpus->get_data('buku')->num_rows(); ?></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-server fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <a href="<?php echo base_url().'admin/anggota' ?>">
-              <div class="panel-footer">
-                <span class="pull-left">View Details</span>
-                <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
-                <div class="clearfix"></div>
               </div>
             </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="panel panel-warning">
-            <div class="panel-heading">
-              <div class="row">
-                <div class="col-xs-3">
-                  <i class="glyphicon glyphiconsort"></i>
-                </div>
-                <div class="col-xs-9 text-right">
-                  <div class="huge">
-                    <font size="18"><b><?php echo $this->M_perpus->edit_data(array('status_peminjaman'=>0),'transaksi')->num_rows(); ?></b></font>
-                  </div>
-                      <div><b>Peminjaman belum selesai</b></div>
-                    </div>
-                  </div>
-                </div>
-                <a href="<?php echo base_url().'admin/peminjaman' ?>">
-                  <div class="panel-footer">
-                    <span class="pull-left">View Details</span>
-                    <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
-                    <div class="clearfix"></div>
-                  </div>
-                </a>
-              </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
-              <div class="panel panel-danger">
-                <div class="panel-heading">
-                  <div class="row">
-                    <div class="col-xs-3">
-                      <i class="glyphicon glyphiconok"></i>
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+               <a href="<?php echo base_url().'admin/anggota' ?>" style="text-decoration: none;">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">DATA ANGGOTA</div>
+                      <div class="h2 mb-0 font-weight-bold text-gray-800"><?php echo $this->M_perpus->get_data('anggota')->num_rows(); ?></div>
                     </div>
-                    <div class="col-xs-9 text-right">
-                      <div class="huge">
-                        <font size="18"><b><?php echo $this->M_perpus->edit_data(array('status_peminjaman'=>1),'transaksi')->num_rows(); ?></b></font>
-                      </div>
-                          <div><b>Peminjaman Sudah selesai ok</b></div>
+                    <div class="col-auto">
+                      <i class="fas fa-user fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+               <a href="<?php echo base_url().'admin/peminjaman' ?>" style="text-decoration: none;">
+              <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Peminjaman belum selesai</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h2 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $this->M_perpus->edit_data(array('status_peminjaman'=>0),'transaksi')->num_rows(); ?></div>
                         </div>
                       </div>
                     </div>
-                    <a href="<?php echo base_url().'admin/peminjaman' ?>">
-                      <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
-                        <div class="clearfix"></div>
-                      </div>
-                    </a>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
                   </div>
                 </div>
               </div>
+            </a>
+            </div>
 
-              <hr>
-
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="panel panel-deafult">
-                    <div class="panel-heading">
-                      <h3 class="panel-title" style="font-size:18px;font-weight:bold;"><i class="glyphicon glyphicon-random arrow-right"></i> Buku</h3>
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+               <a href="<?php echo base_url().'admin/transaksi_selesai' ?>" style="text-decoration: none;">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Peminjaman Sudah selesai</div>
+                      <div class="h2 mb-0 font-weight-bold text-gray-800"><?php echo $this->M_perpus->edit_data(array('status_peminjaman'=>1),'transaksi')->num_rows(); ?></div>
                     </div>
-                        <div class="panel-body">
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-check fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+               <div class="col-lg-4">
+
+              <!-- Dropdown Card Example -->
+              
+              <div class="card shadow mb-4">
+                <!-- Card Header - Accordion -->
+                <a href="#buku" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="buku">
+                  <h6 class="m-0 font-weight-bold text-primary">Daftar Buku Saat ini</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse show" id="buku">
+                  <div class="card-body">
+                  <div class="panel-body">
                           <div class="list-group">
                             <?php foreach ($buku as $b) { ?>
-                              <a href="#" class="list-group-item">
-                                <span class="badge"><?php if($b->status_buku==1){echo "Tersedia";} else{echo "Dipinjam";} ?></span>
-                                <i class="glyphicon glyphiconuser"></i><?php echo $b->judul_buku; ?>
+                              <a href="#" class="list-group-item" style="text-decoration: none;">
+                                <span class="badge badge-secondary"><?php if($b->status_buku==1){echo "Tersedia";} else{echo "Dipinjam";} ?></span>&emsp;
+                                <span class="m-0 font-weight-bold text-primary"><?php echo $b->judul_buku; ?></span>
                               </a>
                             <?php } ?>
                           </div>
+                          <br>
                           <div class="text-right">
-                            <a href="<?php echo base_url().'admin/buku' ?>">Lihat Semua Buku <i class="glyphicon glyphicon-arrow-right"></i></a>
+                              <a href="<?php echo base_url().'admin/buku' ?>" class="btn btn-warning btn-icon-split">
+                              <span class="icon text-black-50">
+                                <i class="fas fa-arrow-right"></i>
+                              </span>
+                              <span class="text">Lanjut</span>
+                            </a>
+                           
                           </div>
-                        </div>
-                      </div>
-                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                    <div class="col-lg-3">
-                      <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <h3 class="panel-title" style="font-size:18px;font-weight:bold;"><i class="glyphicon glyphicon-user o"></i>Anggota Terbaru</h3>
-                        </div>
-                            <div class="panel-body">
+  <div class="col-lg-3">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Accordion -->
+                <a href="#kategori" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="kategori">
+                  <h6 class="m-0 font-weight-bold text-primary">Daftar Kategori</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse show" id="kategori">
+                  <div class="card-body">
+                  <div class="panel-body">
                               <div class="list-group">
-                                <?php foreach ($anggota as $a) { ?>
-                                  <a href="#" class="list-group-item">
-                                    <span class="badge"><?php echo $a->gender; ?></span>
-                                    <i class="glyphicon glyphiconuser"></i><?php echo $a->nama_anggota; ?>
+                                
+                                <?php foreach ($kategori as $k) { ?>
+                                  <a href="#" class="list-group-item" style="text-decoration: none;">
+                                   &emsp;
+                                    <span class="badge badge-secondary"><?php echo $k->nama_kategori ?></span>
                                   </a>
                                 <?php } ?>
                               </div>
                               <div class="text-right">
-                                <a href="<?php echo base_url().'admin/anggota' ?>"> Lihat Semua Anggota <i class="glyphicon glyphicon-arrow-right"></i></a>
+                                <br>
+                                 <a href="<?php echo base_url().'admin/kategori' ?>" class="btn btn-warning btn-icon-split">
+                              <span class="icon text-black-50">
+                                <i class="fas fa-arrow-right"></i>
+                              </span>
+                              <span class="text">Lanjut</span>
+                            </a>
+                               
                               </div>
-                            </div>
-                          </div>
-                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>          
 
-                        <div class="col-lg-5">
-                          <div class="panel panel-default">
-                            <h3 class="panel-title" style="font-size:18px;font-weight:bold;"><i class="glyphicon glyphicon-sort"></i> Peminjaman Terakhir</h3>
-                            </div>
-                            <div class="panel-body">
+
+               <div class="col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Accordion -->
+                <a href="#anggota" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="anggota">
+                  <h6 class="m-0 font-weight-bold text-primary">Daftar Anggota Saat ini</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse show" id="anggota">
+                  <div class="card-body">
+                  <div class="panel-body">
+                              <div class="list-group">
+                                <?php foreach ($anggota as $a) { ?>
+                                  <a href="#" class="list-group-item" style="text-decoration: none;">
+                                   
+                                    <span class="badge badge-secondary"><?php echo $a->gender; ?></span>&emsp;
+                                    <span class="m-0 font-weight-bold text-primary"><?php echo $a->nama_anggota; ?></span>
+                                  </a>
+                                <?php } ?>
+                              </div>
+                              <div class="text-right">
+                                <br>
+                                 <a href="<?php echo base_url().'admin/anggota' ?>" class="btn btn-warning btn-icon-split">
+                              <span class="icon text-black-50">
+                                <i class="fas fa-arrow-right"></i>
+                              </span>
+                              <span class="text">Lanjut </span>
+                            </a>
+                               
+                              </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+               <div class="col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Accordion -->
+                <a href="#peminjaman" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="peminjaman">
+                  <h6 class="m-0 font-weight-bold text-primary">Peminjaman Terakhir</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse show" id="peminjaman">
+                  <div class="card-body">
+                <div class="panel-body">
                               <div class="table-responsive">
                                 <table class="tabel table-bordered tablehover table-striped">
                                   <thead>
@@ -178,10 +246,39 @@
                                 </table>
                               </div>
                                     <div class="text-right">
-                                      <a href="<?php echo base_url().'admin/transaksi' ?>">Lihat Semua Transaksi <i class="glyphicon glyphicon-arrow-right"></i></a>
+                                      <br>
+                                       <a href="<?php echo base_url().'admin/transaksi' ?>" class="btn btn-warning btn-icon-split">
+                                        <span class="icon text-black-50">
+                                          <i class="fas fa-arrow-right"></i>
+                                        </span>
+                                        <span class="text">Lihat detail </span>
+                                      </a>
+                                    
                                     </div>
                                   </div>
-                                </div>
+                                
+                  
+                </div>
+              </div>
+            </div>
+          </div>
 
-                                    <!-- /.row -->
-                                  </div>
+
+
+
+            <!-- Area Chart -->
+           
+
+
+        
+    
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+
+
+</body>
+
+</html>

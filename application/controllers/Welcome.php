@@ -8,7 +8,10 @@ function __construct(){
 
 	public function index()
 	{
+	
 		$this->load->view('login');
+	
+		
 	}
 
 	public function login(){
@@ -26,7 +29,7 @@ function __construct(){
 
 			if($cek > 0)
 			{
-				$session = array('id' => $d->id_admin,'nama' => $d->nama_admin,'status' =>'login');
+				$session = array('id' => $d->id_admin,'name' => $d->nama_admin,'status' =>'login');
 				$this->session->set_userdata($session);
 				redirect(base_url().'admin');
 			}

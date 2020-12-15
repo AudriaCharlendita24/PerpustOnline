@@ -1,72 +1,96 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>LOGIN - Aplikasi E-Library</title>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/bootstrap.css' ?>">
-	<script type="text/javascript" src="<?php echo base_url().'assets/js/jquery.js'; ?>"></script>
-	<script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap.js'; ?>"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>login</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="<?= base_url('asset/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('asset/'); ?>https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="<?= base_url('asset/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
-<body>
-	<div class="col-md-4 col-md-offset-4" style="margin-top:50px">
-		<center>
-			<h2>PERPUSATAKAAN UNIVERSITAS BINA SARANA INFORMATIKA</h2>
-			<h3>LOGIN</h3>
-		</center>
-		<br>
-		<?php
-		if(isset($_GET['pesan'])){
-			if($_GET['pesan']=="gagal"){
-			echo "div class='alert alert-danger alert-danger'>" ;
-			echo $this->session->flashdata('alert');
-			echo "</div>" ;
-		} else if($_GET['pesan']=='logout'){
-			if($this->session->flashdata())
-			{
-				echo "<div class='alert-danger alert-success'>" ;
-				echo $this->session->flashdata('alert');
-				echo "</div>" ;
-			}
-		}else if($_GET['pesan']=='Belum Login'){
-			if($this->session->flashdata())
-			{
-				echo "<div class='alert alert-danger alert-primary'>" ;
-				echo $this->session->flashdata('alert');
-				echo "</div>";
-			}
-		}
-		}else{
-			if($this->session->flashdata())
-			{
-				echo "<div class='alert alert-danger alert-message'>" ;
-				echo $this->session->flashdata('alert');
-				echo "</div>"; 
-			}
-		}
-		?>
-		<br>
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<br><br>
-				<form method="post" action="<?php echo base_url().'welcome/login' ?>">
-					<div class="form-group">
-						<input type="text" name="admin_username" placeholder="username" class="form-control">
-						<?php echo form_error('username'); ?>
-					</div>
-					<div class="form-group">
-						<input type="password" name="admin_password" placeholder="password" class="form-control">
-						<?php echo form_error('password'); ?>
-					</div>
-					<div class="form-group">
-						<input type="submit" value="Login" class="btn btn-primary">
-					</div>
-				</form>
-				<br><br>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript">
-		$('.alert-message').alert().delay(3000).slideUp('slow');
-	</script>
+
+<body class="bg-gradient-secondary">
+
+
+<div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="col-lg-7">
+            <br>
+            <br>
+            
+ <h1 class="h4  mb-4" style="font-family: 'Lobster', cursive; font-size: 40px; text-align: center; font-weight: bold; color: white; letter-spacing: 5px;">PERPUSTAKAAN ONLINE</h1>
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+
+                        <div class="col-lg">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4" style="font-family: 'Roboto Slab', serif; font-size: 30px;">LOGIN</h1>
+                                </div>
+
+                               
+                </form>
+                            </div> <?= $this->session->flashdata('message'); ?>
+
+                                <form class="user" method="post" action="<?= base_url('auth'); ?>">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Enter Email Address..." value="<?= set_value('email'); ?>">
+                                        <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
+                                        <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        Login
+                                    </button>
+                                </form>
+                                <hr>
+                                <div class="text-center">
+                                    <a class="small" href="<?= base_url('auth/forgotpassword'); ?>">Lupa Password?</a>
+                                </div>
+                                <div class="text-center">
+                                    <a class="small" href="<?= base_url('registration'); ?>">Buat akun!</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script type="text/javascript">$('.alert-message').alert().delay(3000).slideup('slow');</script>
+<!-- Bootstrap core JavaScript-->
+<script src="<?= base_url('asset/'); ?>vendor/jquery/jquery.min.js"></script>
+<script src="<?= base_url('asset/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="<?= base_url('asset/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="<?= base_url('asset/'); ?>js/sb-admin-2.min.js"></script>
+
 </body>
+
 </html>
